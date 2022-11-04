@@ -1,10 +1,10 @@
 
 import { ButtonContainer } from './styles';
 
-const Button = () => {
+const Button = ({label}) => {
   return (
     <ButtonContainer type="button">
-      Teste
+      {label}
     </ButtonContainer>
   );
 }
