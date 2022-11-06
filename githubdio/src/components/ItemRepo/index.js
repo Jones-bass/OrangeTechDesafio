@@ -1,18 +1,30 @@
+/* eslint-disable react/button-has-type */
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { MdRemoveCircleOutline, MdOutlineVisibility } from 'react-icons/md';
 
 import { ItemContainer } from './styles';
 
-function ItemRepo() {
+export function ItemRepo({ repo, handleRemoveRepo }) {
+  const handleRemove = () => {
+    handleRemoveRepo(repo.id);
+  };
+
   return (
-    <ItemContainer>
-      <h3>Jones Bass</h3>
-      <p>Jones Bass</p>
-      <a href="/" rel="noreferrer" target="_blank">Ver repositório</a>
+    <ItemContainer onClick={() => handleRemove}>
+      <h3>{repo.name}</h3>
+      <p>{repo.full_name}</p>
+      <a href={repo.html_url} rel="noreferrer" target="_blank">
+        Ver repositório
+        <MdOutlineVisibility size={16} />
+      </a>
       <br />
-      <a href="/" rel="noreferrer" className="remover">Remover</a>
+      <button onClick={() => handleRemoveRepo(repo.id)} type="button">
+        Remove
+        <MdRemoveCircleOutline size={16} />
+      </button>
       <hr />
     </ItemContainer>
   );
 }
-
-export default ItemRepo;
