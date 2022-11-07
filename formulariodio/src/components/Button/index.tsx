@@ -6,8 +6,6 @@ interface IButtonProps {
   onClick?: React.MouseEventHandler<HTMLButtonElement>
 }
 
-const Button = ({ title, onClick }: IButtonProps) => {
+export function Button({ title, onClick }: IButtonProps) {
   return <ButtonContainer onClick={onClick}>{title}</ButtonContainer>
 }
-
-export default Button
