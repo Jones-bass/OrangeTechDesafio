@@ -21,7 +21,7 @@ const schema = yup
 export function Login() {
   const {
     control,
-    formState: { errors },
+    formState: { errors, isValid },
   } = useForm<IFormLogin>({
     resolver: yupResolver(schema),
     mode: 'onBlur',
@@ -50,7 +50,7 @@ export function Login() {
             errorMessage={errors?.password?.message}
           />
           <Spacing />
-          <Button title="Entrar" />
+          <Button disabled={!isValid} title="Entrar" />
         </Column>
       </LoginContainer>
     </Container>

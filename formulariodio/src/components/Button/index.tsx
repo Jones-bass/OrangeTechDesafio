@@ -4,8 +4,13 @@ import { ButtonContainer } from './styles'
 interface IButtonProps {
   title: string
   onClick?: React.MouseEventHandler<HTMLButtonElement>
+  disabled: boolean
 }
 
-export function Button({ title, onClick }: IButtonProps) {
-  return <ButtonContainer onClick={onClick}>{title}</ButtonContainer>
+export function Button({ disabled, title, onClick }: IButtonProps) {
+  return (
+    <ButtonContainer disabled={disabled} onClick={onClick}>
+      {title}
+    </ButtonContainer>
+  )
 }
