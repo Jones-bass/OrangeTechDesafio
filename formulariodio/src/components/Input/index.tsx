@@ -2,7 +2,7 @@ import { Controller, Control } from 'react-hook-form'
 
 import { IFormLogin } from '../../pages/Login/types'
 
-import { InputContainer } from './styles'
+import { InputContainer, ErrorMessage } from './styles'
 
 // eslint-disable-next-line no-undef
 interface IInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -11,7 +11,7 @@ interface IInputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   errorMessage?: string
 }
 
-export function Input({ control, name, ...rest }: IInputProps) {
+export function Input({ control, errorMessage, name, ...rest }: IInputProps) {
   return (
     <>
       <InputContainer>
@@ -29,6 +29,7 @@ export function Input({ control, name, ...rest }: IInputProps) {
           )}
         />
       </InputContainer>
+      {errorMessage ? <ErrorMessage>{errorMessage}</ErrorMessage> : null}
     </>
   )
 }
