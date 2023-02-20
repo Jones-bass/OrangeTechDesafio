@@ -1,7 +1,7 @@
 import { Text } from "@chakra-ui/react"
 import { Link } from "react-router-dom"
 
-const ContaInfo = () => { 
+export function AccountInfo() { 
     return (
         <>
             <Text fontSize='3xl' fontWeight='bold'>
@@ -18,5 +18,3 @@ const ContaInfo = () => {
         </>
     )
 }
-
-export default ContaInfo

@@ -1,11 +1,11 @@
 import { Button } from "@chakra-ui/react"
 import { MouseEventHandler } from "react"
 
-interface IDButton {
+interface ButtonProps {
     onClick: MouseEventHandler
 }
 
-export const DButton = ({ onClick }: IDButton) => {
+export function ButtonLogin({ onClick }: ButtonProps)  {
     return(
         <Button
           onClick={onClick}
@@ -19,4 +19,4 @@ export const DButton = ({ onClick }: IDButton) => {
     )
 }
 
-export default DButton
+

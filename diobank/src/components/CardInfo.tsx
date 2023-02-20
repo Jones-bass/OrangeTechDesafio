@@ -5,7 +5,7 @@ interface ICardInfo {
     content: string
 }
 
-const CardInfo = ({ mainContent, content }: ICardInfo) => {
+export function CardInfo({ mainContent, content }: ICardInfo) {
   return (
     <Box 
         backgroundColor="white" 
